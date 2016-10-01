@@ -71,7 +71,7 @@ while running:
                 
                         if Ausweichen == 1:
                                 rr.set_motors(0.25,0,0.25,1)
-                                time.sleep(1.2)
+                                time.sleep(0.7)
 
                         if Stehenbleiben == 1:
                                 rr.set_motors(0,0,0,0)
