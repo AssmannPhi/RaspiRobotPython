@@ -38,8 +38,9 @@ pygame.key.set_repeat(1, 30)
 
 clock = pygame.time.Clock()
 
-ModeSW1=0
-ModeSW2=0
+Ausweichen=0
+Stehenbleiben=0
+Ultraschallmodus=0
 # Die Schleife, und damit unser Spiel, läuft solange running == True.
 down = False
 running = True
@@ -64,23 +65,24 @@ while running:
         time.sleep(0.25)
         
         # Und wenn die Distanz zum Hindernis kleiner als 20 Zentimeter ist, anhalten
-        if i < 40:
+        if Ultraschallmodus == 1
+                if i < 40:
                 
-                if ModeSW1 == 1:
-                        rr.set_motors(0.25,0,0.05,0)
-                        time.sleep(1.6)
+                        if Ausweichen == 1:
+                                rr.set_motors(0.25,0,0.05,0)
+                                time.sleep(1.6)
 
-                if ModeSW2 == 1:
-                        rr.set_motors(0,0,0,0)
-                        rr.set_led1(1)
-                        rr.set_led2(1)
-                        time.sleep(0.5)
-                        rr.set_led1(0)
-                        rr.set_led2(0)
+                        if Stehenbleiben == 1:
+                                rr.set_motors(0,0,0,0)
+                                rr.set_led1(1)
+                                rr.set_led2(1)
+                                time.sleep(0.5)
+                                rr.set_led1(0)
+                                rr.set_led2(0)
 
-        else:
+                else:
 
-                rr.set_motors(0.25,0,0.25,0)
+                        rr.set_motors(0.25,0,0.25,0)
                 
                 # Alle aufgelaufenen Events holen und abarbeiten.
 
