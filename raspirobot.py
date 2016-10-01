@@ -70,7 +70,7 @@ while running:
                 if i < 40:
                 
                         if Ausweichen == 1:
-                                rr.set_motors(0.25,0,0.05,0)
+                                rr.set_motors(0.25,0,0.25,1)
                                 time.sleep(1.6)
 
                         if Stehenbleiben == 1:
