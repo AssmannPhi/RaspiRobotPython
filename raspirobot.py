@@ -2,6 +2,7 @@
 
 # Pygame-Modul importieren.
 import pygame
+import subprocess
 from rrb3 import *
 import time
 import os
@@ -141,6 +142,10 @@ while running:
                                 
                         elif event.key == pygame.K_3:
                                 Ultraschallmodus=0
+                        elif event.key == pygame.K_5:
+                                subprocess.call("./sync.sh")
+                                pygame.event.post(pygame.event.Event(pygame.QUIT))
+                                
                         
                         if event.key == pygame.K_DOWN:
                                 if Ultraschallmodus == 0:       
