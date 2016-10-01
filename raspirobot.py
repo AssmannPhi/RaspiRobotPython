@@ -144,7 +144,7 @@ while running:
                                 Ultraschallmodus=0
                         elif event.key == pygame.K_5:
                                 subprocess.call("./sync.sh")
-                                running = False
+                                sys.exit
                                 
                         
                         if event.key == pygame.K_DOWN:
