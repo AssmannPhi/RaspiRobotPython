@@ -173,7 +173,7 @@ while running:
                                 rr.set_led1(1)
                                 rr.set_led2(1)
                         else:
-                                rr.set_motors(0.25,0,0.25,0)
+                                rr.set_motors(0,0,0,0)
                         
 
                 
