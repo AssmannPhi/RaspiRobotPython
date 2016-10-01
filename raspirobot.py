@@ -145,6 +145,8 @@ while running:
                         elif event.key == pygame.K_5:
                                 subprocess.Popen('/home/pi/sync.sh', shell=True)
                                 running = False
+                        elif event.key == pygame.K_6:
+                                 os.system("sudo shutdown -h now")
                                 
                         
                         if event.key == pygame.K_DOWN:
