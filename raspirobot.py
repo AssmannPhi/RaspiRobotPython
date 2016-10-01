@@ -65,7 +65,7 @@ while running:
         time.sleep(0.25)
         
         # Und wenn die Distanz zum Hindernis kleiner als 20 Zentimeter ist, anhalten
-        if Ultraschallmodus == 1
+        if Ultraschallmodus == 1:
                 if i < 40:
                 
                         if Ausweichen == 1:
