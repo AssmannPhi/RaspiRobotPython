@@ -148,7 +148,7 @@ while running:
                                 
                         
                         if event.key == pygame.K_DOWN:
-                                if Ultraschallmodus == 0:       
+                                if Ultraschallmodus == 1:       
                                         
                                         down = True
                                         while down:
