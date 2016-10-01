@@ -40,7 +40,7 @@ clock = pygame.time.Clock()
 
 Ausweichen=0
 Stehenbleiben=0
-Ultraschallmodus=0
+Ultraschallmodus=1
 # Die Schleife, und damit unser Spiel, läuft solange running == True.
 down = False
 running = True
@@ -106,7 +106,7 @@ while running:
                         if event.key == pygame.K_ESCAPE:
                                 pygame.event.post(pygame.event.Event(pygame.QUIT))
  
-                        # Wenn vorwärts gedrückt wird, vorwärts fahren
+        # Wenn vorwärts gedrückt wird, vorwärts fahren
                         
                         elif event.key == pygame.K_UP:    
                                 rr.set_motors(0.25,0,0.25,0)
@@ -129,29 +129,38 @@ while running:
 
                         elif event.key == pygame.K_1:
 
-                                ModeSW1=1
-                                ModeSW2=0
+                                Ausweichen=1
+                                Stehenbleiben=0
 
                         elif event.key == pygame.K_2:
 
-                                ModeSW1=0
-                                ModeSW2=1
+                                Ausweichen=0
+                                Stehenbleiben=1
+                        elif event.key == pygame.K_4:
+                                Ultraschallmodus=1
+                                
+                        elif event.key == pygame.K_3:
+                                Ultraschallmodus=0
                         
                         if event.key == pygame.K_DOWN:
-                                down = True
-                                while down:
+                                if Ultraschallmodus == 0:       
+                                        
+                                        down = True
+                                        while down:
 
-                                        for event in pygame.event.get():
-                                        
-                                                if event.type == pygame.KEYDOWN:
-                                                
-                                                        if event.key == pygame.K_UP:
-                                                                down = False
-                                                
-                                        rr.set_motors(0,0,0,0)
-                                        rr.set_led1(0)
-                                        rr.set_led2(0)
-                                        
+                                                for event in pygame.event.get():
+
+                                                        if event.type == pygame.KEYDOWN:
+
+                                                                if event.key == pygame.K_UP:
+                                                                        down = False
+
+                                                rr.set_motors(0,0,0,0)
+                                                rr.set_led1(0)
+                                                rr.set_led2(0)
+                                 
+                                else:
+                                        rr.set_motors(0.25,1,0.25,1)
                                         
                 else:
                         rr.set_motors(0.25,0,0.25,0)
