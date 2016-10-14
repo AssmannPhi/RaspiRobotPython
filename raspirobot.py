@@ -41,7 +41,7 @@ clock = pygame.time.Clock()
 
 Ausweichen=0
 Stehenbleiben=1
-Ultraschallmodus=1
+Ultraschallmodus=0
 # Die Schleife, und damit unser Spiel, läuft solange running == True.
 down = False
 running = True
