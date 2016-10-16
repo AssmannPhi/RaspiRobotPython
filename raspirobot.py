@@ -61,6 +61,7 @@ while running:
         
         # Ultraschallwert abfragen
         i = rr.get_distance()
+        switch= rr.sw1_closed()
         
         # Eine Viertelsekunde warten
         time.sleep(0.25)
@@ -82,8 +83,17 @@ while running:
                                 rr.set_led2(0)
 
                 else:
-
+                        
                         rr.set_motors(0.25,0,0.25,0)
+           
+        if switch == true:
+                rr.set_led1(1)
+                rr.set_led2(1)
+                time.sleep(0.5)
+                rr.set_led1(0)
+                rr.set_led2(0)
+                os.system("sudo shutdown -t 5")
+                
                 
                 # Alle aufgelaufenen Events holen und abarbeiten.
 
@@ -145,8 +155,7 @@ while running:
                         elif event.key == pygame.K_5:
                                 subprocess.Popen('/home/pi/sync.sh', shell=True)
                                 running = False
-                        elif event.key == pygame.K_6:
-                                 os.system("sudo shutdown -h now")
+                        
                                 
                         
                         if event.key == pygame.K_DOWN:
