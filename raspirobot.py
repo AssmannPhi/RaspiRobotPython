@@ -92,7 +92,7 @@ while running:
                 time.sleep(0.5)
                 rr.set_led1(0)
                 rr.set_led2(0)
-                os.system("sudo shutdown -t 5")
+                os.system("sudo shutdown -h -t 5")
                 
                 
                 # Alle aufgelaufenen Events holen und abarbeiten.
