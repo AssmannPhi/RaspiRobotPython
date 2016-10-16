@@ -97,7 +97,9 @@ while running:
                         rr.set_led1(0)
                         rr.set_led2(0)
                         s+=1
+                rr.set_motors(0,0,0,0)
                 os.system("sudo shutdown -h now")
+                running = False
                 
                 
                 # Alle aufgelaufenen Events holen und abarbeiten.
