@@ -86,7 +86,7 @@ while running:
                         
                         rr.set_motors(0.25,0,0.25,0)
            
-        if switch == true:
+        if switch == True:
                 rr.set_led1(1)
                 rr.set_led2(1)
                 time.sleep(0.5)
