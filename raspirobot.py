@@ -86,10 +86,10 @@ while running:
                         
                         rr.set_motors(0.25,0,0.25,0)
         
-        s=0
+        
         
         if switch == True:
-                
+                s=0
                 while s <= 5:
                         rr.set_led1(1)
                         rr.set_led2(1)
