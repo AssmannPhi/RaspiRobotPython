@@ -93,10 +93,10 @@ while running:
                 while s <= 5:
                         rr.set_led1(1)
                         rr.set_led2(1)
-                        time.sleep(0.5)
+                        time.sleep(0.25)
                         rr.set_led1(0)
                         rr.set_led2(0)
-                        s = s+1
+                        s+=1
                 os.system("sudo shutdown -h now")
                 
                 
