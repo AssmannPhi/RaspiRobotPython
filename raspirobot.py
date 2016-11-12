@@ -45,7 +45,7 @@ Ultraschallmodus=0
 # Die Schleife, und damit unser Spiel, läuft solange running == True.
 down = False
 running = True
-
+subprocess.Popen('export FLASK_APP=demo.py flask run --host=0.0.0.0', shell=True)
 while running:
 
         # Framerate auf 30 Frames pro Sekunde beschränken.
@@ -161,6 +161,7 @@ while running:
                                 Ultraschallmodus=0
                         elif event.key == pygame.K_5:
                                 subprocess.Popen('/home/pi/sync.sh', shell=True)
+                                
                                 running = False
                         
                                 
