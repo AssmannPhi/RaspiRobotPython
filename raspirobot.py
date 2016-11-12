@@ -45,7 +45,7 @@ Ultraschallmodus=0
 # Die Schleife, und damit unser Spiel, läuft solange running == True.
 down = False
 running = True
-subprocess.Popen('sudo /home/pi/openFlask.sh', shell=True)
+subprocess.Popen('sudo bash /home/pi/openFlask.sh', shell=True)
 while running:
 
         # Framerate auf 30 Frames pro Sekunde beschränken.
