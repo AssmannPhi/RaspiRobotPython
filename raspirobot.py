@@ -45,7 +45,7 @@ Ultraschallmodus=0
 # Die Schleife, und damit unser Spiel, läuft solange running == True.
 down = False
 running = True
-subprocess.Popen('sudo bash /home/pi/openFlask.sh', shell=True)
+
 while running:
 
         # Framerate auf 30 Frames pro Sekunde beschränken.
@@ -89,17 +89,7 @@ while running:
         
         
         if switch == True:
-                s=0
-                while s <= 5:
-                        rr.set_led1(1)
-                        rr.set_led2(1)
-                        time.sleep(0.25)
-                        rr.set_led1(0)
-                        rr.set_led2(0)
-                        s+=1
-                rr.set_motors(0,0,0,0)
-                os.system("sudo shutdown -h now")
-                running = False
+                subprocess.Popen('sudo bash /home/pi/openFlask.sh', shell=True)
                 
                 
                 # Alle aufgelaufenen Events holen und abarbeiten.
