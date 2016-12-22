@@ -71,10 +71,25 @@ while running:
                 if i < 40:
                 
                         if Ausweichen == 1:
+                                while i < 35:
+                                        rr.set_motors(0.25,1,0.25,1)
+                                        rr.set_led1(1)
+                                        rr.set_led2(1)
+                                        time.sleep(0.05)
+                                        rr.set_led1(0)
+                                        rr.set_led2(0)
+                                
                                 rr.set_motors(0.25,0,0.25,1)
                                 time.sleep(0.5)
 
                         if Stehenbleiben == 1:
+                                 while i < 35:
+                                        rr.set_motors(0.25,1,0.25,1)
+                                        rr.set_led1(1)
+                                        rr.set_led2(1)
+                                        time.sleep(0.05)
+                                        rr.set_led1(0)
+                                        rr.set_led2(0)
                                 rr.set_motors(0,0,0,0)
                                 rr.set_led1(1)
                                 rr.set_led2(1)
@@ -82,14 +97,7 @@ while running:
                                 rr.set_led1(0)
                                 rr.set_led2(0)
                                 
-                        if i < 35:
-                                
-                                rr.set_motors(0.25,1,0.25,1)
-                                rr.set_led1(1)
-                                rr.set_led2(1)
-                                time.sleep(0.05)
-                                rr.set_led1(0)
-                                rr.set_led2(0)
+                      
 
 
                 else:
