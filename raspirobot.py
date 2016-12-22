@@ -83,7 +83,7 @@ while running:
                                 time.sleep(0.5)
 
                         if Stehenbleiben == 1:
-                                 while i < 35:
+                                while i < 35:
                                         rr.set_motors(0.25,1,0.25,1)
                                         rr.set_led1(1)
                                         rr.set_led2(1)
