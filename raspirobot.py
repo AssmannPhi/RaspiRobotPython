@@ -69,33 +69,26 @@ while running:
         # Und wenn die Distanz zum Hindernis kleiner als 20 Zentimeter ist, anhalten
         if Ultraschallmodus == 1:
                 if i < 40:
-                
-                        if Ausweichen == 1:
-                                while i < 35:
-                                        rr.set_motors(0.25,1,0.25,1)
-                                        rr.set_led1(1)
-                                        rr.set_led2(1)
-                                        time.sleep(0.05)
-                                        rr.set_led1(0)
-                                        rr.set_led2(0)
-                                
-                                rr.set_motors(0.25,0,0.25,1)
-                                time.sleep(0.5)
-
-                        if Stehenbleiben == 1:
-                                while i < 35:
-                                        rr.set_motors(0.25,1,0.25,1)
-                                        rr.set_led1(1)
-                                        rr.set_led2(1)
-                                        time.sleep(0.05)
-                                        rr.set_led1(0)
-                                        rr.set_led2(0)
-                                rr.set_motors(0,0,0,0)
+                        if i < 35:
+                                rr.set_motors(0.25,1,0.25,1)
                                 rr.set_led1(1)
                                 rr.set_led2(1)
-                                time.sleep(0.5)
+                                time.sleep(0.05)
                                 rr.set_led1(0)
                                 rr.set_led2(0)
+                                
+                        else:
+                                if Ausweichen == 1:
+                                        rr.set_motors(0.25,0,0.25,1)
+                                        time.sleep(0.5)
+
+                                if Stehenbleiben == 1:
+                                        rr.set_motors(0,0,0,0)
+                                        rr.set_led1(1)
+                                        rr.set_led2(1)
+                                        time.sleep(0.5)
+                                        rr.set_led1(0)
+                                        rr.set_led2(0)
                                 
                       
 
