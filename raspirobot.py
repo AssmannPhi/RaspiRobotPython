@@ -66,7 +66,7 @@ while running:
                 r = repr(i)
                 rnew = r[:4]
                 diststring = "Die Ultraschall-Distanz beträgt "+ str(rnew) + " cm."
-                return diststring
+                return rnew
                 
        
         switch= rr.sw1_closed()
