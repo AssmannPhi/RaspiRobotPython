@@ -62,7 +62,7 @@ while running:
         # Ultraschallwert abfragen
         i = rr.get_distance()
         F = open("Ultraschall_Distanz.txt","w") 
-        F.write("Die Ultraschall-Distanz beträgt"+ str(i) + "Blöcke.")
+        F.write("Die Ultraschall-Distanz beträgt "+ str(i) + " Blöcke.")
         switch= rr.sw1_closed()
         
         # Eine Viertelsekunde warten
