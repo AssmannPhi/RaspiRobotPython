@@ -61,10 +61,14 @@ while running:
         
         # Ultraschallwert abfragen
         i = rr.get_distance()
-        F = open("Ultraschall_Distanz.txt","w") 
-        r = repr(i)
-        rnew = r[:4]
-        F.write("Die Ultraschall-Distanz beträgt "+ str(rnew) + " cm.")
+        def getDist():
+               
+                r = repr(i)
+                rnew = r[:4]
+                diststring = "Die Ultraschall-Distanz beträgt "+ str(rnew) + " cm."
+                return diststring
+                
+       
         switch= rr.sw1_closed()
         
         # Eine Viertelsekunde warten
