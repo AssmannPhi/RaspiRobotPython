@@ -66,8 +66,8 @@ while running:
         
         # Ultraschallwert abfragen
         i = rr.get_distance()
-        MyGlobals.x=i
-	print(MyGlobals.x)
+        distance.MyGlobals.x=i
+	print(distance.MyGlobals.x)
                 
        
         switch= rr.sw1_closed()
