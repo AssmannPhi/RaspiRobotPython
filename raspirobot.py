@@ -7,7 +7,8 @@ from rrb3 import *
 import time
 import os
 
-import DistanceSocket.distance as distance
+
+import DistanceSocket.mod as mod
 # Roboter-Module initialisieren
 rr=RRB3(9,6)
 rr.set_led1(1)
@@ -66,8 +67,8 @@ while running:
         
         # Ultraschallwert abfragen
         i = rr.get_distance()
-        distance.x=i
-	print(distance.x)
+       	mod.setDistance(i)
+	print(mod.getDistance())
                 
        
         switch= rr.sw1_closed()
