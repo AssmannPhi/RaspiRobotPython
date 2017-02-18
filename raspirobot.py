@@ -7,7 +7,7 @@ from rrb3 import *
 import time
 import os
 
-import DistanceSocket.distance as distance
+from DistanceSocket.distance import MyGlobals
 # Roboter-Module initialisieren
 rr=RRB3(9,6)
 rr.set_led1(1)
@@ -47,7 +47,7 @@ Ultraschallmodus=0
 # Die Schleife, und damit unser Spiel, läuft solange running == True.
 down = False
 running = True
-distance.init()
+
 
 
 	
@@ -66,7 +66,7 @@ while running:
         
         # Ultraschallwert abfragen
         i = rr.get_distance()
-        distance.distanceInt = i
+        MyGlobals.x=i
                 
        
         switch= rr.sw1_closed()
