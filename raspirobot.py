@@ -6,7 +6,7 @@ import subprocess
 from rrb3 import *
 import time
 import os
-import zerorpc
+
 import DistanceSocket.distance
 # Roboter-Module initialisieren
 rr=RRB3(9,6)
