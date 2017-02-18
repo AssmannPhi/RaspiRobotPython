@@ -6,6 +6,8 @@ import subprocess
 from rrb3 import *
 import time
 import os
+import zerorpc
+import DistanceSocket.distance
 # Roboter-Module initialisieren
 rr=RRB3(9,6)
 rr.set_led1(1)
@@ -45,7 +47,10 @@ Ultraschallmodus=0
 # Die Schleife, und damit unser Spiel, läuft solange running == True.
 down = False
 running = True
+distance.init()
 
+
+	
 while running:
 
         # Framerate auf 30 Frames pro Sekunde beschränken.
@@ -61,12 +66,7 @@ while running:
         
         # Ultraschallwert abfragen
         i = rr.get_distance()
-        def getDist():
-               
-                r = repr(i)
-                rnew = r[:4]
-                diststring = "Die Ultraschall-Distanz beträgt "+ str(rnew) + " cm."
-                return rnew
+        distance.distanceInt = i
                 
        
         switch= rr.sw1_closed()
