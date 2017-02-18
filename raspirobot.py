@@ -7,7 +7,7 @@ from rrb3 import *
 import time
 import os
 
-import DistanceSocket.distance
+from DistanceSocket.distance import *
 # Roboter-Module initialisieren
 rr=RRB3(9,6)
 rr.set_led1(1)
