@@ -67,8 +67,7 @@ while running:
         
         # Ultraschallwert abfragen
         i = rr.get_distance()
-       	mod.setDistance(i)
-	print(mod.getDistance())
+      
                 
        
         switch= rr.sw1_closed()
@@ -111,7 +110,7 @@ while running:
         
         if switch == True:
                 subprocess.Popen('sudo bash /home/pi/openFlask.sh', shell=True)
-                
+                subprocess.Popen('python /home/pi/DistanceSocket/distancesocket.py', shell=True)
                 
                 # Alle aufgelaufenen Events holen und abarbeiten.
 
