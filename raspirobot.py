@@ -73,6 +73,8 @@ while running:
                 
        
         switch= rr.sw1_closed()
+	bumm = rr.sw2_closed()
+	
         
         # Eine Viertelsekunde warten
         time.sleep(0.25)
@@ -87,7 +89,9 @@ while running:
                                 time.sleep(0.05)
                                 rr.set_led1(0)
                                 rr.set_led2(0)
-                                
+                        
+			
+			
                         else:
                                 if Ausweichen == 1:
                                         rr.set_motors(0.25,0,0.25,1)
@@ -103,12 +107,22 @@ while running:
                                 
                       
 
-
+		if bumm = True:
+			
+			rr.set_motors(0.25,1,0.25,1)
+			rr.set_led1(1)
+                        rr.set_led2(1)
+                        time.sleep(0.05)
+                        rr.set_led1(0)
+                        rr.set_led2(0)
+			time.sleep(1)
+			rr.set_motors(0.25,0,0.25,0)
+			
                 else:
                         
                         rr.set_motors(0.25,0,0.25,0)
         
-        
+        	
         
         if switch == True:
                 subprocess.Popen('sudo bash /home/pi/openFlask.sh', shell=True)
