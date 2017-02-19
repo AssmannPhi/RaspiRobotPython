@@ -54,6 +54,7 @@ running = True
 
 Speed=0.25
 sp=Speed
+SlowSpeed=0.05
 	
 while running:
 
@@ -152,14 +153,14 @@ while running:
                         # Bei links links abbiegen
                         
                         elif event.key == pygame.K_LEFT:
-                                rr.set_motors(sp,0,sp-0.20,0)
+                                rr.set_motors(sp,0,SlowSpeed,0)
                                 rr.set_led2(0)
                         
                         # Und bei rechts dann rechts
                         
                         elif event.key == pygame.K_RIGHT:
 
-                                rr.set_motors(sp-0.20,0,sp,0)
+                                rr.set_motors(SlowSpeed,0,sp,0)
                                 rr.set_led1(0)
                         
                         # Wenn man nach unten drückt, dann stehenbleiben
