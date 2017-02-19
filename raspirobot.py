@@ -52,7 +52,8 @@ down = False
 running = True
 
 
-
+Speed=0.25
+sp=Speed
 	
 while running:
 
@@ -83,7 +84,7 @@ while running:
         if Ultraschallmodus == 1:
 		if i < 40:
                         if i < 35:
-                                rr.set_motors(0.25,1,0.25,1)
+                                rr.set_motors(sp,1,sp,1)
                                 rr.set_led1(1)
                                 rr.set_led2(1)
                                 time.sleep(0.05)
@@ -94,7 +95,7 @@ while running:
 			
                         else:
                                 if Ausweichen == 1:
-                                        rr.set_motors(0.25,0,0.25,1)
+                                        rr.set_motors(sp,0,sp,1)
                                         time.sleep(0.5)
 
                                 if Stehenbleiben == 1:
@@ -107,7 +108,7 @@ while running:
                                 
 		else:
                         
-			rr.set_motors(0.25,0,0.25,0)
+			rr.set_motors(sp,0,sp,0)
                       
 
 
@@ -145,20 +146,20 @@ while running:
         # Wenn vorwärts gedrückt wird, vorwärts fahren
                         
                         elif event.key == pygame.K_UP:    
-                                rr.set_motors(0.25,0,0.25,0)
+                                rr.set_motors(sp,0,sp,0)
                                 
                         
                         # Bei links links abbiegen
                         
                         elif event.key == pygame.K_LEFT:
-                                rr.set_motors(0.25,0,0.05,0)
+                                rr.set_motors(sp,0,sp-0.20,0)
                                 rr.set_led2(0)
                         
                         # Und bei rechts dann rechts
                         
                         elif event.key == pygame.K_RIGHT:
 
-                                rr.set_motors(0.05,0,0.25,0)
+                                rr.set_motors(sp-0.20,0,sp,0)
                                 rr.set_led1(0)
                         
                         # Wenn man nach unten drückt, dann stehenbleiben
@@ -202,11 +203,11 @@ while running:
                                                 rr.set_led2(0)
                                  
                                 else:
-                                        rr.set_motors(0.25,1,0.25,1)
+                                        rr.set_motors(sp,1,sp,1)
                                         
                 else:
                         if Ultraschallmodus == 1:
-                                rr.set_motors(0.25,0,0.25,0)
+                                rr.set_motors(sp,0,sp,0)
                                 rr.set_led1(1)
                                 rr.set_led2(1)
                         else:
