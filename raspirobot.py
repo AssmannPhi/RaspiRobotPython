@@ -6,6 +6,7 @@ import subprocess
 from rrb3 import *
 import time
 import os
+import sys
 
 
 import DistanceSocket.mod as mod
@@ -20,7 +21,8 @@ rr.stop()
 
 # Integer für Ultraschellsensor definieren
 i=0
-
+f= open("raspirobot.log", "w")
+sys.stdout = f
 
 # Initialisieren aller Pygame-Module und    
 # Fenster erstellen (wir bekommen eine Surface, die den Bildschirm repräsentiert).
@@ -133,6 +135,7 @@ while running:
 
                         if event.key == pygame.K_ESCAPE:
                                 pygame.event.post(pygame.event.Event(pygame.QUIT))
+				f.close()
  
         # Wenn vorwärts gedrückt wird, vorwärts fahren
                         
