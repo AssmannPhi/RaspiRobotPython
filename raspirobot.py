@@ -81,7 +81,7 @@ while running:
         
         # Und wenn die Distanz zum Hindernis kleiner als 20 Zentimeter ist, anhalten
         if Ultraschallmodus == 1:
-                if i < 40:
+		if i < 40:
                         if i < 35:
                                 rr.set_motors(0.25,1,0.25,1)
                                 rr.set_led1(1)
@@ -105,22 +105,23 @@ while running:
                                         rr.set_led1(0)
                                         rr.set_led2(0)
                                 
+		else:
+                        
+			rr.set_motors(0.25,0,0.25,0)
                       
 
-		if bumm == True:
+	if bumm == True:
 			
-			rr.set_motors(0.25,1,0.25,1)
-			rr.set_led1(1)
-                        rr.set_led2(1)
-                        time.sleep(0.05)
-                        rr.set_led1(0)
-                        rr.set_led2(0)
-			time.sleep(1)
-			rr.set_motors(0.25,0,0.25,0)
+		rr.set_motors(0.25,1,0.25,1)
+		rr.set_led1(1)
+		rr.set_led2(1)
+		time.sleep(0.05)
+		rr.set_led1(0)
+		rr.set_led2(0)
+		time.sleep(1)
+		rr.set_motors(0.25,0,0.25,0)
 			
-                else:
-                        
-                        rr.set_motors(0.25,0,0.25,0)
+               
         
         	
         
