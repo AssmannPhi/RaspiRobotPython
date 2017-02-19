@@ -110,17 +110,7 @@ while running:
 			rr.set_motors(0.25,0,0.25,0)
                       
 
-	if bumm == True:
-			
-		rr.set_motors(0.25,1,0.25,1)
-		rr.set_led1(1)
-		rr.set_led2(1)
-		time.sleep(0.05)
-		rr.set_led1(0)
-		rr.set_led2(0)
-		time.sleep(1)
-		rr.set_motors(0.25,0,0.25,0)
-			
+
                
         
         	
