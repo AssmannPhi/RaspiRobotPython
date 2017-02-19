@@ -112,7 +112,7 @@ while running:
         
         if switch == True:
                 subprocess.Popen('sudo bash /home/pi/openFlask.sh', shell=True)
-                subprocess.Popen('python /home/pi/DistanceSocket/distancesocket.py', shell=False)
+                subprocess.Popen('python ./home/pi/DistanceSocket/distancesocket.py', shell=True)
                 
                 # Alle aufgelaufenen Events holen und abarbeiten.
 
