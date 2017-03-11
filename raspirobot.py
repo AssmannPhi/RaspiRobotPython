@@ -47,6 +47,7 @@ clock = pygame.time.Clock()
 Ausweichen=0
 Stehenbleiben=1
 Ultraschallmodus=0
+Putzmodus=0
 # Die Schleife, und damit unser Spiel, läuft solange running == True.
 down = False
 running = True
@@ -85,13 +86,19 @@ while running:
         if Ultraschallmodus == 1:
 		if i < 40:
                         if i < 35:
-                                rr.set_motors(sp,1,sp,1)
-                                rr.set_led1(1)
-                                rr.set_led2(1)
-                                time.sleep(0.05)
-                                rr.set_led1(0)
-                                rr.set_led2(0)
-                        
+				if Putzmodus == 0:
+					rr.set_motors(sp,1,sp,1)
+					rr.set_led1(1)
+					rr.set_led2(1)
+					time.sleep(0.05)
+					rr.set_led1(0)
+					rr.set_led2(0)
+                        	if Putzmodus == 1:
+					rr.set_led1(1)
+					rr.set_led2(1)
+					time.sleep(0.05)
+					rr.set_led1(0)
+					rr.set_led2(0)
 			
 			
                         else:
@@ -184,7 +191,9 @@ while running:
                                 
                                 running = False
                         
-                                
+                        elif event.key == pygame.K_6:
+				sp=0.35
+				Putzmodus=1
                         
                         if event.key == pygame.K_DOWN:
                                 if Ultraschallmodus == 1:       
