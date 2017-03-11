@@ -106,17 +106,31 @@ while running:
 						rr.set_led1(0)
 						rr.set_led2(0)
                         else:
-                                if Ausweichen == 1:
-                                        rr.set_motors(sp,0,sp,1)
-                                        time.sleep(0.5)
+				if Putzmodus == 1:
+					if Ausweichen == 1:
+						rr.set_motors(0.20,0,0.20,1)
+						time.sleep(0.5)
 
-                                if Stehenbleiben == 1:
-                                        rr.set_motors(0,0,0,0)
-                                        rr.set_led1(1)
-                                        rr.set_led2(1)
-                                        time.sleep(0.5)
-                                        rr.set_led1(0)
-                                        rr.set_led2(0)
+					if Stehenbleiben == 1:
+						rr.set_motors(0,0,0,0)
+						rr.set_led1(1)
+						rr.set_led2(1)
+						time.sleep(0.5)
+						rr.set_led1(0)
+						rr.set_led2(0)
+				else:
+					
+					if Ausweichen == 1:
+						rr.set_motors(sp,0,sp,1)
+						time.sleep(0.5)
+
+					if Stehenbleiben == 1:
+						rr.set_motors(0,0,0,0)
+						rr.set_led1(1)
+						rr.set_led2(1)
+						time.sleep(0.5)
+						rr.set_led1(0)
+						rr.set_led2(0)
                                 
 		else:
                         
