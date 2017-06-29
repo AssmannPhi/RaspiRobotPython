@@ -8,7 +8,6 @@ import time
 import os
 import sys
 import unicornleds as leds
-unicornhat.brightness(0.1)
 
 import DistanceSocket.mod as mod
 # Roboter-Module initialisieren
