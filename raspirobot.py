@@ -7,6 +7,7 @@ from rrb3 import *
 import time
 import os
 import sys
+import unicornleds as leds
 
 
 import DistanceSocket.mod as mod
@@ -56,6 +57,7 @@ running = True
 Speed=0.25
 sp=Speed
 SlowSpeed=0.05
+leds.ok()
 	
 while running:
 
@@ -85,7 +87,9 @@ while running:
         # Und wenn die Distanz zum Hindernis kleiner als 20 Zentimeter ist, anhalten
         if Ultraschallmodus == 1:
 		if i < 40:
+			leds.warn()
                         if i < 35:
+				leds.warnhard()
 				if Putzmodus == 0:
 					rr.set_motors(sp,1,sp,1)
 					rr.set_led1(1)
@@ -133,7 +137,7 @@ while running:
 						rr.set_led2(0)
                                 
 		else:
-                        
+                        leds.forward()
 			rr.set_motors(sp,0,sp,0)
                       
 
@@ -173,13 +177,14 @@ while running:
                         
                         elif event.key == pygame.K_UP:    
                                 rr.set_motors(sp,0,sp,0)
-                                
+                                leds.forward()
                         
                         # Bei links links abbiegen
                         
                         elif event.key == pygame.K_LEFT:
                                 rr.set_motors(sp,0,SlowSpeed,0)
                                 rr.set_led2(0)
+				leds.left()
                         
                         # Und bei rechts dann rechts
                         
@@ -187,6 +192,7 @@ while running:
 
                                 rr.set_motors(SlowSpeed,0,sp,0)
                                 rr.set_led1(0)
+				leds.right()
                         
                         # Wenn man nach unten drückt, dann stehenbleiben
 
@@ -214,7 +220,8 @@ while running:
 				Putzmodus=1
                         
                         if event.key == pygame.K_DOWN:
-                                if Ultraschallmodus == 1:       
+                                if Ultraschallmodus == 1:
+					leds.stop()
                                         
                                         down = True
                                         while down:
@@ -229,8 +236,10 @@ while running:
                                                 rr.set_motors(0,0,0,0)
                                                 rr.set_led1(0)
                                                 rr.set_led2(0)
+					leds.forward()
                                  
                                 else:
+					leds.back()
                                         rr.set_motors(sp,1,sp,1)
                                         
                 else:
@@ -238,7 +247,9 @@ while running:
                                 rr.set_motors(sp,0,sp,0)
                                 rr.set_led1(1)
                                 rr.set_led2(1)
+				leds.forward()
                         else:
+				leds.ok()
                                 rr.set_motors(0,0,0,0)
                         
 
