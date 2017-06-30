@@ -53,7 +53,7 @@ down = False
 running = True
 
 
-Speed=0.50
+Speed=0.55
 sp=Speed
 SlowSpeed=0.05
 leds.ok()
@@ -81,7 +81,7 @@ while running:
 	
         
         # Eine Viertelsekunde warten
-        time.sleep(0.10)
+        time.sleep(0.05)
         
         # Und wenn die Distanz zum Hindernis kleiner als 20 Zentimeter ist, anhalten
         if Ultraschallmodus == 1:
