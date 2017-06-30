@@ -57,7 +57,7 @@ Speed=0.25
 sp=Speed
 SlowSpeed=0.05
 leds.ok()
-	
+subprocess.Popen('sudo bash /home/pi/openFlask.sh', shell=True)	
 while running:
 
         # Framerate auf 30 Frames pro Sekunde beschränken.
@@ -146,8 +146,7 @@ while running:
         	
         
         if switch == True:
-                subprocess.Popen('sudo bash /home/pi/openFlask.sh', shell=True)
-             
+             leds.strobo()
                 
                 # Alle aufgelaufenen Events holen und abarbeiten.
 
