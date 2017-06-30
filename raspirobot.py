@@ -29,11 +29,11 @@ sys.stdout = f
 
 pygame.init()
 
-screen = pygame.display.set_mode((800, 600))
+screen = pygame.display.set_mode((100, 100))
 
 # Titel des Fensters setzen, Mauszeiger nicht verstecken und Tastendrücke wiederholt senden.
 
-pygame.display.set_caption("RASPIROBOTBOARD KONTROLLCENTER")
+pygame.display.set_caption("RapiRobot")
 
 pygame.mouse.set_visible(1)
 
@@ -69,7 +69,7 @@ while running:
 
         # screen-Surface mit Schwarz (RGB = 0, 0, 0) füllen.
 
-        screen.fill((0, 0, 0))
+        screen.fill((255, 255, 255))
         
         # Ultraschallwert abfragen
         i = rr.get_distance()
@@ -81,13 +81,13 @@ while running:
 	
         
         # Eine Viertelsekunde warten
-        time.sleep(0.25)
+        time.sleep(0.15)
         
         # Und wenn die Distanz zum Hindernis kleiner als 20 Zentimeter ist, anhalten
         if Ultraschallmodus == 1:
-		if i < 40:
+		if i < 30:
 			leds.warn()
-                        if i < 35:
+                        if i < 20:
 				leds.warnhard()
 				if Putzmodus == 0:
 					rr.set_motors(sp,1,sp,1)
