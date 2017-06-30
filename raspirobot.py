@@ -51,7 +51,7 @@ Putzmodus=0
 # Die Schleife, und damit unser Spiel, läuft solange running == True.
 down = False
 running = True
-
+wait_time=0.25
 
 Speed=0.55
 sp=Speed
@@ -93,13 +93,13 @@ while running:
 					rr.set_motors(sp,1,sp,1)
 					rr.set_led1(1)
 					rr.set_led2(1)
-					time.sleep(0.05)
+					time.sleep(wait_time)
 					rr.set_led1(0)
 					rr.set_led2(0)
                         	if Putzmodus == 1:
 					if Ausweichen == 1:
 						rr.set_motors(0.20,0,0.20,1)
-						time.sleep(0.5)
+						time.sleep(wait_time)
 
 					if Stehenbleiben == 1:
 						rr.set_motors(0,0,0,0)
@@ -112,7 +112,7 @@ while running:
 				if Putzmodus == 1:
 					if Ausweichen == 1:
 						rr.set_motors(0.20,0,0.20,1)
-						time.sleep(0.5)
+						time.sleep(wait_time)
 
 					if Stehenbleiben == 1:
 						rr.set_motors(0,0,0,0)
@@ -125,7 +125,7 @@ while running:
 					
 					if Ausweichen == 1:
 						rr.set_motors(sp,0,sp,1)
-						time.sleep(0.5)
+						time.sleep(wait_time)
 
 					if Stehenbleiben == 1:
 						rr.set_motors(0,0,0,0)
