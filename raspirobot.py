@@ -146,7 +146,7 @@ while running:
         	
         
         if switch == True:
-             leds.strobo()
+             os.system("sudo shutdown now -h")
                 
                 # Alle aufgelaufenen Events holen und abarbeiten.
 
