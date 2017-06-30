@@ -146,7 +146,15 @@ while running:
         	
         
         if switch == True:
-             os.system("sudo shutdown now -h")
+	     	leds.c3()
+	     	time.sleep(1)
+	     	leds.c2()
+	     	time.sleep(1)
+	     	leds.c1()
+	     	time.sleep(1)
+	     	leds.c0()
+	     	time.sleep(1)
+             	os.system("sudo shutdown now -h")
                 
                 # Alle aufgelaufenen Events holen und abarbeiten.
 
