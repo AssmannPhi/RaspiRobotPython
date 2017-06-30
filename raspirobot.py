@@ -53,7 +53,7 @@ down = False
 running = True
 
 
-Speed=0.30
+Speed=0.35
 sp=Speed
 SlowSpeed=0.05
 leds.ok()
