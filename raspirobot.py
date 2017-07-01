@@ -53,7 +53,7 @@ down = False
 running = True
 wait_time=0.25
 
-Speed=0.55
+Speed=0.50
 sp=Speed
 SlowSpeed=0.05
 leds.ok()
@@ -81,13 +81,13 @@ while running:
 	
         
         # Eine Viertelsekunde warten
-        time.sleep(0.20)
+        time.sleep(0.25)
         
         # Und wenn die Distanz zum Hindernis kleiner als 20 Zentimeter ist, anhalten
         if Ultraschallmodus == 1:
-		if i < 30:
+		if i < 20:
 			leds.warn()
-                        if i < 20:
+                        if i < 10:
 				leds.warnhard()
 				if Putzmodus == 0:
 					rr.set_motors(sp,1,sp,1)
