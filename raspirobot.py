@@ -85,9 +85,9 @@ while running:
         
         # Und wenn die Distanz zum Hindernis kleiner als 20 Zentimeter ist, anhalten
         if Ultraschallmodus == 1:
-		if i < 20:
+		if i < 30:
 			leds.warn()
-                        if i < 10:
+                        if i < 5:
 				leds.warnhard()
 				if Putzmodus == 0:
 					rr.set_motors(sp,1,sp,1)
