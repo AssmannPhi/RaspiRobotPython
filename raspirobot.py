@@ -81,7 +81,7 @@ while running:
 	
         
         # Eine Viertelsekunde warten
-        time.sleep(0.25)
+        time.sleep(0.15)
         
         # Und wenn die Distanz zum Hindernis kleiner als 20 Zentimeter ist, anhalten
         if Ultraschallmodus == 1:
